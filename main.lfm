@@ -1,0 +1,133 @@
+object Form1: TForm1
+  Left = 773
+  Height = 427
+  Top = 316
+  Width = 554
+  Caption = 'Printer'
+  ClientHeight = 427
+  ClientWidth = 554
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.0.12.0'
+  object Button1: TButton
+    Left = 320
+    Height = 25
+    Top = 8
+    Width = 75
+    Caption = 'Imprime'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Edit1: TEdit
+    Left = 8
+    Height = 23
+    Top = 8
+    Width = 303
+    TabOrder = 1
+    Text = 'Edit1'
+  end
+  object ToggleBox1: TToggleBox
+    Left = 16
+    Height = 25
+    Top = 208
+    Width = 75
+    Caption = 'linha'
+    OnChange = ToggleBox1Change
+    TabOrder = 2
+  end
+  object ToggleBox2: TToggleBox
+    Left = 103
+    Height = 25
+    Top = 206
+    Width = 75
+    Caption = 'Font B'
+    OnChange = ToggleBox2Change
+    OnClick = ToggleBox2Click
+    TabOrder = 3
+  end
+  object ToggleBox3: TToggleBox
+    Left = 192
+    Height = 25
+    Top = 206
+    Width = 75
+    Caption = 'Font A'
+    OnClick = ToggleBox3Click
+    TabOrder = 4
+  end
+  object ToggleBox4: TToggleBox
+    Left = 16
+    Height = 25
+    Top = 96
+    Width = 75
+    Caption = 'BARCODE'
+    OnChange = ToggleBox4Change
+    OnClick = ToggleBox4Click
+    TabOrder = 5
+  end
+  object Button2: TButton
+    Left = 120
+    Height = 25
+    Top = 97
+    Width = 75
+    Caption = 'beep'
+    OnClick = Button2Click
+    TabOrder = 6
+  end
+  object Button3: TButton
+    Left = 16
+    Height = 25
+    Top = 40
+    Width = 75
+    Caption = 'Negrito'
+    OnClick = Button3Click
+    TabOrder = 7
+  end
+  object Button4: TButton
+    Left = 103
+    Height = 25
+    Top = 40
+    Width = 75
+    Caption = 'Normal'
+    OnClick = Button4Click
+    TabOrder = 8
+  end
+  object Button5: TButton
+    Left = 192
+    Height = 25
+    Top = 40
+    Width = 75
+    Caption = 'Sublinhado'
+    OnClick = Button5Click
+    TabOrder = 9
+  end
+  object Button6: TButton
+    Left = 16
+    Height = 25
+    Top = 264
+    Width = 75
+    Caption = 'Guilhotina'
+    OnClick = Button6Click
+    TabOrder = 10
+  end
+  object Button7: TButton
+    Left = 280
+    Height = 25
+    Top = 40
+    Width = 75
+    Caption = 'DOUBLE'
+    OnClick = Button7Click
+    TabOrder = 11
+  end
+  object SdpoSerial1: TSdpoSerial
+    Active = False
+    BaudRate = br__9600
+    AltBaudRate = 0
+    DataBits = db8bits
+    Parity = pNone
+    FlowControl = fcNone
+    StopBits = sbOne
+    Device = 'COM19'
+    Left = 176
+    Top = 55
+  end
+end
