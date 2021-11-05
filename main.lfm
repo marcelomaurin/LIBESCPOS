@@ -118,6 +118,31 @@ object Form1: TForm1
     OnClick = Button7Click
     TabOrder = 11
   end
+  object Label1: TLabel
+    Left = 8
+    Height = 15
+    Top = 316
+    Width = 56
+    Caption = 'Serial Port:'
+    ParentColor = False
+  end
+  object Edit2: TEdit
+    Left = 9
+    Height = 23
+    Top = 336
+    Width = 144
+    TabOrder = 12
+    Text = 'Edit2'
+  end
+  object ToggleBox5: TToggleBox
+    Left = 160
+    Height = 25
+    Top = 336
+    Width = 75
+    Caption = 'Mudar'
+    OnChange = ToggleBox5Change
+    TabOrder = 13
+  end
   object SdpoSerial1: TSdpoSerial
     Active = False
     BaudRate = br__9600

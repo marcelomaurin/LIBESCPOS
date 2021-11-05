@@ -21,11 +21,14 @@ type
     Button6: TButton;
     Button7: TButton;
     Edit1: TEdit;
+    Edit2: TEdit;
+    Label1: TLabel;
     SdpoSerial1: TSdpoSerial;
     ToggleBox1: TToggleBox;
     ToggleBox2: TToggleBox;
     ToggleBox3: TToggleBox;
     ToggleBox4: TToggleBox;
+    ToggleBox5: TToggleBox;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -41,6 +44,7 @@ type
     procedure ToggleBox3Click(Sender: TObject);
     procedure ToggleBox4Change(Sender: TObject);
     procedure ToggleBox4Click(Sender: TObject);
+    procedure ToggleBox5Change(Sender: TObject);
   private
 
   public
@@ -114,6 +118,7 @@ end;
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   IMPELGINI9 := TIMP_ELGINI9.create();
+  Edit2.text := SdpoSerial1.Device;
 end;
 
 procedure TForm1.FormDestroy(Sender: TObject);
@@ -163,6 +168,12 @@ begin
   //SdpoSerial1.WriteData(#29+#107+#10+#73+#10+#123+#66+#78+#111+#46+#123+#67+#12+#34+#56+#00);
   SdpoSerial1.WriteData(#29+#107+#73+#4+#6+'123456'+#00);
   SdpoSerial1.close;
+end;
+
+procedure TForm1.ToggleBox5Change(Sender: TObject);
+begin
+  SdpoSerial1.Device:= Edit2.text;
+  ShowMessage('Device Change!');
 end;
 
 end.
