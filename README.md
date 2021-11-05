@@ -8,9 +8,9 @@
 <p>Outros modelos serão adicionados</p>
 <h1>English</h1>
 <h2>LIBESCPOS</h2>
-<p>Biblioteca de impressao para impressoras termicas não fiscais</p>
-<p>Compatível com diversos modelos de impressoras usb/serial.</p>
-<p>Tabela de compatibilidade:</p>
+<p>Print Library for Non-Fiscal Thermal Printers</p>
+<p>Compatible with several models of usb/serial printers.</p>
+<p>Compatibility Table:</p>
 <p>Elgin I9</p>
-<p>Chinesa QR203 TTL+RS232</p>
-<p>Outros modelos serão adicionados</p>  
+<p>Chinese QR203 TTL+RS232</p>
+<p>Other models will be added</p>  
