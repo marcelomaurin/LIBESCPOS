@@ -11,9 +11,9 @@ type
 
  { TIMP_ELGINI9 }
 
- TIMP_ELGINI9 = class(TIMP_GENERICO)
-     //FCOLUNA : integer;
-     //FSERIAL : String;
+ TIMP_ELGINI9 = class(TInterfacedObject,TIMP_GENERICO)
+     FCOLUNA : integer;
+     FSERIAL : String;
 
  private
      function getserial : string;
@@ -23,6 +23,7 @@ type
  public
      constructor create();
      destructor destroy();
+
      function NewLine(): string;
      function InitPrint(): string;
      function LineText(Info : string): string;
@@ -43,6 +44,7 @@ type
      function HabilitaArmazenaDados(): string;
      function Armazenadados( Info : string): string;
      function ImprimeQRCODEArmazenado(): string;
+ published
      property Serial : String read getserial  write setserial;
 end;
 
