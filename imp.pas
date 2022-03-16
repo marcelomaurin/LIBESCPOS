@@ -13,7 +13,8 @@ type CTipoIMP = (TI_DRIVER, TI_SERIAL,  TI_BLUETOOTH);
 type CModeloIMP = (MI_ELGINI9);
 
 type CFormat = (FLeft, FCenter, FRigth); (*Formatacao do Texto*)
-type CTypeText = (TT_NORMAL, TT_DOUBLE ); (*Tipo do Texto*)
+type CTypeText = (TT_NORMAL, TT_DOUBLE, TT_BOLD, TT_UNDERLINE ); (*Tipo do Texto*)
+
 
   { Timp }
 
@@ -38,10 +39,13 @@ type TImp = class(tobject)
           procedure TextoSerial(info : string);
           procedure TextoSerial(info : string; Formatacao : CFormat);
           procedure TextoSerial(info : string; Formatacao : CFormat; typetext : CTypeText);
+          procedure PrintBARCODE(info : string);
           procedure LineSerial();
           procedure close();
           procedure open;
           procedure Guilhotina();
+          procedure Gaveta();
+          procedure Beep();
           procedure EjetarCUPOM();
           property device : string read FDevice write SetDevice ;
           property tipoimp : CTipoIMP read Ftipoimp write SetTipoimp;
@@ -135,6 +139,17 @@ begin
             typetextantes:= IMPELGINI9.DoubleTexto();
             tam := (tam div 2);
        end;
+
+       if (typetext = TT_BOLD) then
+       begin
+            typetextantes:= IMPELGINI9.Negrito();
+       end;
+
+       if (typetext = TT_UNDERLINE) then
+       begin
+            typetextantes:= IMPELGINI9.Sublinhado();
+       end;
+
        impElginI9.destroy();
   end;
 
@@ -143,6 +158,21 @@ begin
   for a := 0 to info2.Count-1 do
     TextoSerial(info2.Strings[a]);
   TextoSerial(typetextdepois);
+end;
+
+procedure TImp.PrintBARCODE(info: string);
+var
+  impElginI9 : TIMP_ELGINI9;
+  tmp : string;
+begin
+  if modeloimp = MI_ELGINI9 then
+  begin
+       impElginI9 := TIMP_ELGINI9.create();
+       tmp := impElginI9.Barra1D(info);
+       impElginI9.destroy();
+  end;
+  LazSerial1.WriteData(tmp);
+  TextoSerial(info,FCenter,TT_BOLD);
 end;
 
 procedure TImp.TextoSerial(info: string);
@@ -209,6 +239,38 @@ begin
   begin
        impElginI9 := TIMP_ELGINI9.create();
        tmp := impElginI9.Guilhotina();
+       impElginI9.free();
+  end;
+  LazSerial1.WriteData(tmp);
+  //frmcupom.mecupom.Lines.Append('');
+  sleep(200);
+end;
+
+procedure TImp.Gaveta();
+var
+  impElginI9 : TIMP_ELGINI9;
+  tmp : string;
+begin
+  if modeloimp = MI_ELGINI9 then
+  begin
+       impElginI9 := TIMP_ELGINI9.create();
+       tmp := impElginI9.AcionaGaveta();
+       impElginI9.free();
+  end;
+  LazSerial1.WriteData(tmp);
+  //frmcupom.mecupom.Lines.Append('');
+  sleep(200);
+end;
+
+procedure TImp.Beep();
+var
+  impElginI9 : TIMP_ELGINI9;
+  tmp : string;
+begin
+  if modeloimp = MI_ELGINI9 then
+  begin
+       impElginI9 := TIMP_ELGINI9.create();
+       tmp := impElginI9.beep();
        impElginI9.free();
   end;
   LazSerial1.WriteData(tmp);
