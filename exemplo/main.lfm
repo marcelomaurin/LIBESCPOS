@@ -1,0 +1,276 @@
+object frmmain: Tfrmmain
+  Left = 773
+  Height = 334
+  Top = 316
+  Width = 537
+  Caption = 'Printer Test'
+  ClientHeight = 334
+  ClientWidth = 537
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '2.0.12.0'
+  object Button1: TButton
+    Left = 360
+    Height = 25
+    Top = 19
+    Width = 75
+    Caption = 'print'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object edTexto: TEdit
+    Left = 8
+    Height = 23
+    Top = 20
+    Width = 344
+    TabOrder = 1
+    Text = 'Print TEST, libESCPOS OK'
+  end
+  object ToggleBox1: TToggleBox
+    Left = 9
+    Height = 27
+    Top = 216
+    Width = 75
+    Caption = 'LINE'
+    OnChange = ToggleBox1Change
+    TabOrder = 2
+  end
+  object ToggleBox2: TToggleBox
+    Left = 99
+    Height = 27
+    Top = 214
+    Width = 75
+    Caption = 'Font B'
+    OnChange = ToggleBox2Change
+    OnClick = ToggleBox2Click
+    TabOrder = 3
+  end
+  object ToggleBox3: TToggleBox
+    Left = 185
+    Height = 27
+    Top = 214
+    Width = 75
+    Caption = 'Font A'
+    OnClick = ToggleBox3Click
+    TabOrder = 4
+  end
+  object ToggleBox4: TToggleBox
+    Left = 9
+    Height = 27
+    Top = 168
+    Width = 75
+    Caption = 'BARCODE'
+    OnChange = ToggleBox4Change
+    OnClick = ToggleBox4Click
+    TabOrder = 5
+  end
+  object Button2: TButton
+    Left = 185
+    Height = 27
+    Top = 168
+    Width = 75
+    Caption = 'BEEP'
+    OnClick = Button2Click
+    TabOrder = 6
+  end
+  object Button6: TButton
+    Left = 10
+    Height = 25
+    Top = 244
+    Width = 75
+    Caption = 'CUT'
+    OnClick = Button6Click
+    TabOrder = 7
+  end
+  object Label1: TLabel
+    Left = 10
+    Height = 15
+    Top = 280
+    Width = 56
+    Caption = 'Serial Port:'
+    ParentColor = False
+  end
+  object edDevice: TEdit
+    Left = 10
+    Height = 23
+    Top = 296
+    Width = 144
+    TabOrder = 8
+    Text = 'COM1'
+  end
+  object ToggleBox5: TToggleBox
+    Left = 158
+    Height = 25
+    Top = 296
+    Width = 75
+    Caption = 'change port'
+    OnChange = ToggleBox5Change
+    TabOrder = 9
+  end
+  object BarcodeQR1: TBarcodeQR
+    Left = 376
+    Height = 120
+    Top = 51
+    Width = 124
+    StrictSize = False
+    Text = 'http://maurinsoft.com.br'
+  end
+  object Button8: TButton
+    Left = 99
+    Height = 25
+    Top = 244
+    Width = 161
+    Caption = 'CASH DRAWER'
+    OnClick = Button8Click
+    TabOrder = 10
+  end
+  object edBarcode: TEdit
+    Left = 344
+    Height = 23
+    Top = 199
+    Width = 186
+    OnChange = edBarcodeChange
+    TabOrder = 11
+    Text = 'http://maurinsoft.com.br'
+  end
+  object Label2: TLabel
+    Left = 9
+    Height = 15
+    Top = 5
+    Width = 24
+    Caption = 'Text:'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 392
+    Height = 15
+    Top = 179
+    Width = 60
+    Caption = 'qrcode text'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 249
+    Height = 15
+    Top = 280
+    Width = 65
+    Caption = 'Printer Type:'
+    ParentColor = False
+  end
+  object cbModelo: TComboBox
+    Left = 249
+    Height = 23
+    Top = 296
+    Width = 152
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'Elgin i9'
+    )
+    TabOrder = 12
+    Text = 'Elgin i9'
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 55
+    Top = 45
+    Width = 361
+    Caption = 'TYPE TEXT GROUP'
+    ClientHeight = 35
+    ClientWidth = 357
+    TabOrder = 13
+    object Button3: TButton
+      Left = 8
+      Height = 23
+      Top = 2
+      Width = 76
+      Caption = 'BOLD'
+      OnClick = Button3Click
+      TabOrder = 0
+    end
+    object Button4: TButton
+      Left = 98
+      Height = 23
+      Top = 2
+      Width = 75
+      Caption = 'Normal'
+      OnClick = Button4Click
+      TabOrder = 1
+    end
+    object Button5: TButton
+      Left = 190
+      Height = 23
+      Top = 2
+      Width = 75
+      Caption = 'UNDERLINE'
+      OnClick = Button5Click
+      TabOrder = 2
+    end
+    object Button7: TButton
+      Left = 277
+      Height = 23
+      Top = 2
+      Width = 75
+      Caption = 'DOUBLE'
+      OnClick = Button7Click
+      TabOrder = 3
+    end
+  end
+  object btQRCODE: TToggleBox
+    Left = 99
+    Height = 27
+    Top = 168
+    Width = 75
+    Caption = 'QRCODE'
+    TabOrder = 14
+  end
+  object gbFormat: TGroupBox
+    Left = 10
+    Height = 57
+    Top = 101
+    Width = 358
+    Caption = 'FORMAT'
+    ClientHeight = 37
+    ClientWidth = 354
+    TabOrder = 15
+    object btLeft: TButton
+      Left = 6
+      Height = 25
+      Top = 3
+      Width = 75
+      Caption = 'LEFT'
+      OnClick = btLeftClick
+      TabOrder = 0
+    end
+    object btCenter: TButton
+      Left = 96
+      Height = 25
+      Top = 3
+      Width = 75
+      Caption = 'CENTER'
+      OnClick = btCenterClick
+      TabOrder = 1
+    end
+    object btRight: TButton
+      Left = 188
+      Height = 25
+      Top = 3
+      Width = 75
+      Caption = 'RIGHT'
+      OnClick = btRightClick
+      TabOrder = 2
+    end
+  end
+  object LazSerial1: TLazSerial
+    Active = False
+    BaudRate = br___110
+    DataBits = db8bits
+    Parity = pNone
+    FlowControl = fcNone
+    StopBits = sbOne
+    Device = 'COM1'
+    RcvLineCRLF = False
+    Left = 321
+    Top = 203
+  end
+end
