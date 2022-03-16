@@ -8,6 +8,7 @@
 <p>Elgin I9</p>
 <p>Chinesa QR203 TTL+RS232</p>
 <p>Outros modelos serão adicionados</p>
+<a href="https://youtu.be/CDo6d0TXdrI">Link de apresentação no Youtube</a>
 <h1>English</h1>
 <h2>LIBESCPOS</h2>
 <p>Print Library for Non-Fiscal Thermal Printers</p>
