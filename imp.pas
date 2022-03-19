@@ -19,7 +19,6 @@ type CTypeText = (TT_NORMAL, TT_DOUBLE, TT_BOLD, TT_UNDERLINE ); (*Tipo do Texto
   { Timp }
 
 type TImp = class(tobject)
-
     private
       FDevice: string;
           LazSerial1: TLazSerial;
@@ -29,8 +28,6 @@ type TImp = class(tobject)
           procedure SetDevice( value: string);
           procedure SetTipoimp(value : CTipoIMP);
           procedure Setmodeloimp(value : CModeloIMP);
-
-
     public
           constructor create(PLazSerial1: TLazSerial);
           destructor destroy();
@@ -50,11 +47,6 @@ type TImp = class(tobject)
           property device : string read FDevice write SetDevice ;
           property tipoimp : CTipoIMP read Ftipoimp write SetTipoimp;
           property modeloimp : CModeloIMP read Fmodeloimp write SetModeloImp;
-
-
-
-
-
   end;
 
 implementation
@@ -168,11 +160,11 @@ begin
   if modeloimp = MI_ELGINI9 then
   begin
        impElginI9 := TIMP_ELGINI9.create();
-       tmp := impElginI9.Barra1D(info);
+       tmp := impElginI9.Barra1D(info,$1D,$48,$2);
        impElginI9.destroy();
   end;
   LazSerial1.WriteData(tmp);
-  TextoSerial(info,FCenter,TT_BOLD);
+  //TextoSerial(info,FCenter,TT_BOLD);
 end;
 
 procedure TImp.TextoSerial(info: string);
@@ -302,15 +294,17 @@ begin
                 margemesquerda := margem div 2;
                 spaces := space(margemesquerda)+space((Length(aux) div 2)-margemesquerda);
            end;
+           if (Formatacao = FRigth) then
+           begin
+                margemesquerda := margem div 2;
+                spaces := space(tam-Length(aux));
+           end;
 
            aux :=spaces + aux;
            //showmessage(aux);
            listagem.Append(aux );
            //frmcupom.mecupom.Lines.Append(aux);
            info := copy(info,(tam-margem)+1,Length(info));
-
-
-
   until (Length(info)<(tam-margem)) ;
 
   (*Formatando linhas*)

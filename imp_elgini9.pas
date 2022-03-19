@@ -22,7 +22,7 @@ type
 
  public
      constructor create();
-     destructor destroy();
+     //destructor destroy();
 
      function NewLine(): string;
      function InitPrint(): string;
@@ -35,7 +35,7 @@ type
      function Guilhotina(): string;
      function AcionaGaveta(): string;
      function Barra2D(Info : string): string;
-     function Barra1D(Info : string): string;
+     function Barra1D(Info : string; H : byte ; R : byte; I : byte): string;
      function loadImagem(X,Y : integer;Info : String): string;
      function imprimeImagem(X,Y : integer): string;
      function Centralizado(): string;
@@ -46,6 +46,7 @@ type
      function ImprimeQRCODEArmazenado(): string;
  published
      property Serial : String read getserial  write setserial;
+     property Coluna : integer read FCOLUNA;
 end;
 
 var
@@ -67,14 +68,16 @@ end;
 
 constructor TIMP_ELGINI9.create();
 begin
-    FCOLUNA := 80;
+    FCOLUNA := 48;
 
 end;
 
+(*
 destructor TIMP_ELGINI9.destroy();
 begin
 
 end;
+ *)
 
 function TIMP_ELGINI9.NewLine(): string;
 begin
@@ -162,9 +165,15 @@ begin
   result := '';
 end;
 
-function TIMP_ELGINI9.Barra1D(Info: string): string;
+//function TIMP_ELGINI9.Barra1D(Info : ansistring; H : byte ; R : byte; I : byte): ansistring;
+function TIMP_ELGINI9.Barra1D(Info : string; H : byte ; R : byte; I : byte): string;
 begin
-  result := (*String(#29)+String(#72)+String(#2)+ (*Legenda*)
+  result := String(#27)+ String(#97) + String(#1)+
+            String(#$1D)+ String(#$68)+ String(#$70)+
+            String(char(H))+ String(chr(R))+String(chr(I))+
+            String(#$1D)+ String(#$77) + String(#1)+
+
+           (*String(#29)+String(#72)+String(#2)+ (*Legenda*)
             String(#29)+String(#76)+String(#10)+String(#0)+String(#10)+String(#0)+
             String(#29)+String(#104)+String(#162)+*)
             String(#29)+String(#107)+String(char(#4))+Info + String(#0)

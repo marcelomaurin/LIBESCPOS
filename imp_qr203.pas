@@ -34,7 +34,7 @@ type
       function beep(): string;
       function Guilhotina(): string;
       function AcionaGaveta(): string;
-      function Barra1D(Info : string): string;
+      function Barra1D(Info : string; H : byte ; R : byte; I : byte): string;
       function Barra2D(info : String): string;
       function loadImagem(X,Y : integer; Info : String): string;
       function imprimeImagem(X,Y : integer): string;
@@ -110,7 +110,7 @@ begin
 
 end;
 
-function TIMP_QR203.Barra1D(Info: string): string;
+function TIMP_QR203.Barra1D(Info : string; H : byte ; R : byte; I : byte): string;
 begin
 
 end;
