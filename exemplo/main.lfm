@@ -270,7 +270,7 @@ object frmmain: Tfrmmain
     StopBits = sbOne
     Device = 'COM1'
     RcvLineCRLF = False
-    Left = 321
-    Top = 203
+    Left = 304
+    Top = 144
   end
 end
