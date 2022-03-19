@@ -292,7 +292,7 @@ begin
            if (Formatacao = FCENTER) then
            begin
                 margemesquerda := margem div 2;
-                spaces := space(margemesquerda)+space((Length(aux) div 2)-margemesquerda);
+                spaces := space(margemesquerda)+space(((tam-Length(aux)) div 2)-margemesquerda);
            end;
            if (Formatacao = FRigth) then
            begin
@@ -300,7 +300,12 @@ begin
                 spaces := space(tam-Length(aux));
            end;
 
-           aux :=spaces + aux;
+
+           aux :=spaces + aux ;
+           if(length(aux)< tam) then
+           begin
+                aux := aux + space(tam-length(aux));
+           end;
            //showmessage(aux);
            listagem.Append(aux );
            //frmcupom.mecupom.Lines.Append(aux);

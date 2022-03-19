@@ -91,7 +91,8 @@ end;
 
 function TIMP_ELGINI9.LineText(Info: string): string;
 begin
-  result := Info+ String(FF)+ NewLine();
+  //result := Info+ String(FF)+ NewLine();
+  result := info + String(FF);
 end;
 
 function TIMP_ELGINI9.beep(): string;
