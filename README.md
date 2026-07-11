@@ -6,7 +6,8 @@
 <p>Exemplo de uso, projeto FILA</p>
 <p>Tabela de compatibilidade:</p>
 Este projeto migrou para o pacote https://github.com/marcelomaurin/CHATGPT
-# Atenção este projeto não sofre mais atualizações.
+
+Atenção este projeto não sofre mais atualizações.
 
 <p>Elgin I9</p>
 <p>Chinesa QR203 TTL+RS232</p>
